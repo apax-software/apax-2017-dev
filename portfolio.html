@@ -1,0 +1,29 @@
+---
+layout: page
+permalink: portfolio/
+title: Portfolio
+redirect_from:
+ - /client-showcase.html
+---
+
+<div class="container-fluid top-container">
+	<div class="container">
+		<!-- <div class="row"> -->
+			<div class="col-md-10 col-md-offset-1">
+				{% for company in site.data.portfolio %}
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="box horizontal" tabindex="0">
+						<div class="vertical">
+							<img class="fade-in" src="/assets/img/portfolio/{{ company.image_url }}" alt="{{ company.company }} Logo" />
+						</div>
+						<div class="hover-fade">
+							<h5><a href="{{ company.site_url }}" class="scale-hover"><span data-hover="{{ company.company }}">{{ company.company }}</span></a></h5>
+							<p>{{ company.description }}</p>		
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div> <!-- col-md-10 -->
+		<!-- </div>  --><!-- row -->
+	</div>
+</div>

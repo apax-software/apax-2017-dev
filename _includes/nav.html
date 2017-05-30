@@ -1,0 +1,55 @@
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" >
+      <div class="container">
+        <div class="navbar-header">
+          
+          <button type="button" class="c-hamburger c-hamburger--htx navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-label="Open Menu">
+            <span>toggle menu</span>
+          </button>
+          <a href="/"><img class="mobile" src="/assets/img/Apax_logo_red.png" alt="APAX Software Logo" height="45px"> </a>
+        &nbsp;
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" style="min-width:0"> <!-- RIGHT ALIGNED NAVBAR -->
+            <li {% if page.path contains 'about' %} class="active" {% endif %}>   <!-- ABOUT -->
+                <a data-toggle="collapse" data-target=".in" href="/about/" class="highlight-across" data-hover="About">About</a>
+              </li> 
+            <li {% if page.path contains 'services' %} class="active" {% endif %}>  <!-- SERVICES -->
+                <a data-toggle="collapse" data-target=".in" href="/services/">Services</a>
+              </li>
+            <li {% if page.path contains 'portfolio' %} class="active" {% endif %}>    <!-- Work -->
+                <a data-toggle="collapse" data-target=".in" href="/portfolio/">Portfolio</a>
+            </li>
+            <li {% if page.path contains 'team' %} class="active" {% endif %}>   <!-- Team -->
+                <a data-toggle="collapse" data-target=".in" href="/team/">Team </a>
+            </li>
+            <li {% if page.path contains 'contact' %} class="active" {% endif %}> <!-- Contact -->
+                <a data-toggle="collapse" data-target=".in"  href="/contact/">Contact</a>
+            </li>
+            </ul>
+          </div>
+          <!-- <div style="clear:both"></div> -->
+        </div><!--/.container -->
+    </nav>
+    <script>
+// hamburger active
+(function() {
+
+    "use strict";
+
+    var toggles = document.querySelectorAll(".c-hamburger");
+
+    for (var i = toggles.length - 1; i >= 0; i--) {
+      var toggle = toggles[i];
+      toggleHandler(toggle);
+    };
+
+    function toggleHandler(toggle) {
+      toggle.addEventListener( "click", function(e) {
+        e.preventDefault();
+        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+      });
+    }
+
+  })();
+</script>
